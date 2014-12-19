@@ -197,9 +197,6 @@
         <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:41:52+01:00">
           <target>Save new translation</target>
         </alt-trans>
-        <note from="georg" priority="10">That's a button to save the translation and set the state to translated</note>
-        <note from="georg" priority="10">Yeah, babe!</note>
-        <note from="georg" priority="10">That's a button to save the translation and set the state to "translated"</note>
         <note from="georg" priority="5">That's a button to save the translation and set the state to "translated"</note>
         <note from="georg" priority="10">Yeah, babe!</note>
       </trans-unit>
