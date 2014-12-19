@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+  <file original="global" source-language="en" target-language="de" datatype="plaintext" date="2014-12-19T17:44:43+01:00">
+    <body>
+      <trans-unit id="domain_title">
+        <source>domain_title</source>
+        <target>Bereich %domain% (%lang%)</target>
+      </trans-unit>
+      <trans-unit id="key">
+        <source>key</source>
+        <target>Schlüssel</target>
+      </trans-unit>
+      <trans-unit id="translation">
+        <source>translation</source>
+        <target>Übersetzung</target>
+      </trans-unit>
+      <trans-unit id="state">
+        <source>state</source>
+        <target>Status</target>
+      </trans-unit>
+      <trans-unit id="to_index">
+        <source>to_index</source>
+        <target>Zurück zur Übersicht</target>
+      </trans-unit>
+      <trans-unit id="source_text">
+        <source>source_text</source>
+        <target>Quelltext</target>
+      </trans-unit>
+      <trans-unit id="edit_key_title">
+        <source>edit_key_title</source>
+        <target>Schlüssel bearbeiten</target>
+      </trans-unit>
+      <trans-unit id="old_versions">
+        <source>old_versions</source>
+        <target>Vorherige Versionen</target>
+      </trans-unit>
+      <trans-unit id="cancel">
+        <source>cancel</source>
+        <target>Abbrechen</target>
+      </trans-unit>
+      <trans-unit id="index_title">
+        <source>index_title</source>
+        <target>Sprache (%lang%)</target>
+      </trans-unit>
+      <trans-unit id="domain">
+        <source>domain</source>
+        <target>Bereich</target>
+      </trans-unit>
+      <trans-unit id="total">
+        <source>total</source>
+        <target>Gesamt</target>
+      </trans-unit>
+      <trans-unit id="missing_translation">
+        <source>missing_translation</source>
+        <target>Nicht übersetzt</target>
+      </trans-unit>
+      <trans-unit id="missing_approval">
+        <source>missing_approval</source>
+        <target>Nicht bestätigt</target>
+      </trans-unit>
+      <trans-unit id="continue_to_next">
+        <source>continue_to_next</source>
+        <target>Gleich weiter zu nächsten Übersetzung</target>
+      </trans-unit>
+      <trans-unit id="save_as_translated">
+        <source>save_as_translated</source>
+        <target>Als "übersetzt" speichern</target>
+      </trans-unit>
+      <trans-unit id="save_keep_state">
+        <source>save_keep_state</source>
+        <target>Als "nicht fertig übersetzt" speichern</target>
+      </trans-unit>
+      <trans-unit id="approve">
+        <source>approve</source>
+        <target>Bestätigen</target>
+      </trans-unit>
+      <trans-unit id="save_changed_translation">
+        <source>save_changed_translation</source>
+        <target>Geänderte Übersetzung speichern</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,15 @@
+regelwerk_translation_index:
+    path: /translator/{lang}
+    defaults: { _controller: RegelwerkTranslationBundle:Translation:index }
+    methods: [get]
+
+regelwerk_translation_domain:
+    path: /translator/{lang}/domain/{domain}
+    defaults: { _controller: RegelwerkTranslationBundle:Translation:domain }
+    methods: [get]
+    
+regelwerk_translation_edit_key:
+    path: /translator/{lang}/domain/{domain}/bearbeite/{key}
+    defaults: { _controller: RegelwerkTranslationBundle:Translation:editKey }
+    methods: [get, post]
+    

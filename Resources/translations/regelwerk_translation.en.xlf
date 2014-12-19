@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+    <file original="global" source-language="system" target-language="de" datatype="plaintext" date="2013-01-23T16:22:00+01:00">
+        <body>
+            <trans-unit id="domain_title">
+                <source>domain_title</source>
+                <target>Domain %domain% (%lang%)</target>
+            </trans-unit>
+            <trans-unit id="key">
+                <source>key</source>
+                <target>Key</target>
+            </trans-unit>
+            <trans-unit id="translation">
+                <source>translation</source>
+                <target>Translation</target>
+            </trans-unit>
+            <trans-unit id="state">
+                <source>state</source>
+                <target>State</target>
+            </trans-unit>
+            <trans-unit id="to_index">
+                <source>to_index</source>
+                <target>Back to index</target>
+            </trans-unit>
+            <trans-unit id="source_text">
+                <source>source_text</source>
+                <target>Source</target>
+            </trans-unit>
+            <trans-unit id="edit_key_title">
+                <source>edit_key_title</source>
+                <target>Edit translation key "%key%"</target>
+            </trans-unit>
+            <trans-unit id="old_versions">
+                <source>old_versions</source>
+                <target>old versions</target>
+            </trans-unit>
+            <trans-unit id="cancel">
+                <source>cancel</source>
+                <target>Cancel</target>
+            </trans-unit>
+            <trans-unit id="index_title">
+                <source>index_title</source>
+                <target>Language (%lang%)</target>
+            </trans-unit>
+            <trans-unit id="domain">
+                <source>domain</source>
+                <target>Domain</target>
+            </trans-unit>
+            <trans-unit id="total">
+                <source>total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="missing_translation">
+                <source>missing_translation</source>
+                <target>Not translated</target>
+            </trans-unit>
+            <trans-unit id="missing_approval">
+                <source>missing_approval</source>
+                <target>Not approved</target>
+            </trans-unit>
+            <trans-unit id="continue_to_next">
+                <source>continue_to_next</source>
+                <target>Continue to the next translation</target>
+            </trans-unit>
+            <trans-unit id="save_as_translated">
+                <source>save_as_translated</source>
+                <target>Save as translated</target>
+            </trans-unit>
+            <trans-unit id="save_keep_state">
+                <source>save_keep_state</source>
+                <target>Save only</target>
+            </trans-unit>
+            <trans-unit id="approve">
+                <source>approve</source>
+                <target>Approve</target>
+            </trans-unit>
+            <trans-unit id="save_changed_translation">
+                <source>save_changed_translation</source>
+                <target>Save changed translation</target>
+                <note from="georg" priority="10">Yeah, babe!</note>
+                <note from="georg" priority="5">That's a button to save the translation and set the state to "translated"</note>
+            </trans-unit>
+            <trans-unit id="notes">
+                <source>notes</source>
+                <target>Notes</target>
+            </trans-unit>
+        </body>  
+    </file>
+</xliff>

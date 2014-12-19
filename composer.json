@@ -1,0 +1,23 @@
+{
+    "name": "regelwerk/translation-bundle",
+    "description": "CLI and web interface für xliff file merge and translation",
+    "keywords": [ "translation", "cli", "symfony", "xliff" ],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+        "name": "Georg Gell/Regelwerk Datenmanagement GmbH",
+        "email": "geg@have2.com"
+    }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/symfony": "~2.6"
+    },
+    "autoload": {
+        "psr-0": {
+            "Regelwerk\\TranslationBundle\\": ""
+        }
+    },
+    "target-dir" : "Regelwerk/TranslationBundle"
+}

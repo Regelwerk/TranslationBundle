@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+  <file original="global" source-language="en" target-language="de" datatype="plaintext" date="2014-12-19T10:14:43+01:00">
+    <body>
+      <trans-unit approved="no" id="domain_title" extradata="last-edit:georg">
+        <source>domain_title</source>
+        <target state="translated">Bereich %domain% (%lang%)</target>
+        <alt-trans alttranstype="reference">
+          <target>Domain %domain% (%lang%)</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T15:23:30+01:00">
+          <target>Domain %domain% (%lang%)</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="key" extradata="last-edit:georg">
+        <source>key</source>
+        <target state="translated">Schlüssel</target>
+        <alt-trans alttranstype="reference">
+          <target>Key</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T15:27:18+01:00">
+          <target>Key</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="translation" extradata="last-edit:georg">
+        <source>translation</source>
+        <target state="translated">Übersetzung</target>
+        <alt-trans alttranstype="reference">
+          <target>Translation</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T15:33:32+01:00">
+          <target>Translation</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="state" extradata="last-edit:georg">
+        <source>state</source>
+        <target state="translated">Status</target>
+        <alt-trans alttranstype="reference">
+          <target>State</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T15:34:33+01:00">
+          <target>State</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="to_index" extradata="last-edit:georg">
+        <source>to_index</source>
+        <target state="translated">Zurück zur Übersicht</target>
+        <alt-trans alttranstype="reference">
+          <target>Back to index</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T15:35:59+01:00">
+          <target>Back to index</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="source_text" extradata="last-edit:georg">
+        <source>source_text</source>
+        <target state="translated">Quelltext</target>
+        <alt-trans alttranstype="reference">
+          <target>Source</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T16:11:08+01:00">
+          <target>Source</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="edit_key_title" extradata="last-edit:georg" last-edit-from="">
+        <source>edit_key_title</source>
+        <target state="translated">Schlüssel bearbeiten "%key%"</target>
+        <alt-trans alttranstype="reference">
+          <target>Edit translation key "%key%"</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T16:20:57+01:00">
+          <target>Edit translation key</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:53:50+01:00">
+          <target>Schlüssel bearbeiten</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="old_versions" extradata="last-edit:georg">
+        <source>old_versions</source>
+        <target state="translated">Vorherige Versionen</target>
+        <alt-trans alttranstype="reference">
+          <target>old versions</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:21:14+01:00">
+          <target>old versions</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="cancel" extradata="last-edit:georg">
+        <source>cancel</source>
+        <target state="translated">Abbrechen</target>
+        <alt-trans alttranstype="reference">
+          <target>Cancel</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:24:16+01:00">
+          <target>Cancel</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="index_title" extradata="last-edit:georg">
+        <source>index_title</source>
+        <target state="translated">Sprache (%lang%)</target>
+        <alt-trans alttranstype="reference">
+          <target>Language (%lang%)</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:30:14+01:00">
+          <target>Language (%lang%)</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="domain" extradata="last-edit:georg">
+        <source>domain</source>
+        <target state="translated">Bereich</target>
+        <alt-trans alttranstype="reference">
+          <target>Domain</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:34:00+01:00">
+          <target>Domain</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="total" extradata="last-edit:georg">
+        <source>total</source>
+        <target state="translated">Gesamt</target>
+        <alt-trans alttranstype="reference">
+          <target>Total</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:35:15+01:00">
+          <target>Total</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="missing_translation" extradata="last-edit:georg">
+        <source>missing_translation</source>
+        <target state="translated">Nicht übersetzt</target>
+        <alt-trans alttranstype="reference">
+          <target>Not translated</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:36:46+01:00">
+          <target>Not translated</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="missing_approval" extradata="last-edit:georg">
+        <source>missing_approval</source>
+        <target state="translated">Nicht bestätigt</target>
+        <alt-trans alttranstype="reference">
+          <target>Not approved</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:37:25+01:00">
+          <target>Not approved</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="continue_to_next" extradata="last-edit:georg">
+        <source>continue_to_next</source>
+        <target state="translated">Gleich weiter zu nächsten Übersetzung</target>
+        <alt-trans alttranstype="reference">
+          <target>Continue to the next translation</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:38:03+01:00">
+          <target>Continue to the next translation</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="save_as_translated" extradata="last-edit:georg">
+        <source>save_as_translated</source>
+        <target state="translated">Als "übersetzt" speichern</target>
+        <alt-trans alttranstype="reference">
+          <target>Save as translated</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:38:41+01:00">
+          <target>Save as translated</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="save_keep_state" extradata="last-edit:georg">
+        <source>save_keep_state</source>
+        <target state="translated">Als "nicht fertig übersetzt" speichern</target>
+        <alt-trans alttranstype="reference">
+          <target>Save only</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:39:50+01:00">
+          <target>Save only</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:46:17+01:00">
+          <target>Als nicht fertig übersetzt speichern</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="approve" extradata="last-edit:georg">
+        <source>approve</source>
+        <target state="translated">Bestätigen</target>
+        <alt-trans alttranstype="reference">
+          <target>Approve</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:40:30+01:00">
+          <target>Approve</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="save_changed_translation" extradata="last-edit:georg" last-edit-from="">
+        <source>save_changed_translation</source>
+        <target state="translated">Geänderte Übersetzung speichern</target>
+        <alt-trans alttranstype="reference">
+          <target>Save changed translation</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T17:41:52+01:00">
+          <target>Save new translation</target>
+        </alt-trans>
+        <note from="georg" priority="10">That's a button to save the translation and set the state to translated</note>
+        <note from="georg" priority="10">Yeah, babe!</note>
+        <note from="georg" priority="10">That's a button to save the translation and set the state to "translated"</note>
+        <note from="georg" priority="5">That's a button to save the translation and set the state to "translated"</note>
+        <note from="georg" priority="10">Yeah, babe!</note>
+      </trans-unit>
+      <trans-unit approved="no" id="notes" extradata="last-edit:georg">
+        <source>notes</source>
+        <target state="translated">Bemerkungen</target>
+        <alt-trans alttranstype="reference">
+          <target>Notes</target>
+        </alt-trans>
+        <alt-trans alttranstype="previous-version" extradata="date:2014-12-19T18:41:34+01:00">
+          <target>Notes</target>
+        </alt-trans>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
