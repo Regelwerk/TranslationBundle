@@ -62,7 +62,7 @@
           <target>Source</target>
         </alt-trans>
       </trans-unit>
-      <trans-unit approved="no" id="edit_key_title" extradata="last-edit:georg" last-edit-from="">
+      <trans-unit approved="no" id="edit_key_title" extradata="last-edit:georg">
         <source>edit_key_title</source>
         <target state="translated">Schlüssel bearbeiten "%key%"</target>
         <alt-trans alttranstype="reference">
@@ -188,7 +188,7 @@
           <target>Approve</target>
         </alt-trans>
       </trans-unit>
-      <trans-unit approved="no" id="save_changed_translation" extradata="last-edit:georg" last-edit-from="">
+      <trans-unit approved="no" id="save_changed_translation" extradata="last-edit:georg">
         <source>save_changed_translation</source>
         <target state="translated">Geänderte Übersetzung speichern</target>
         <alt-trans alttranstype="reference">

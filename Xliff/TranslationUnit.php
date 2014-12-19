@@ -66,7 +66,7 @@ class TranslationUnit {
     }
 
     public function setNeedsTranslation($username = '') {
-        $this->setAttribute($this->transUnit, 'last-edit-from', $username);
+        $this->setAttribute($this->transUnit, 'extradata', 'last-edit:' . $username);
         $this->setAttribute($this->transUnit->target, 'state', 'needs-translation');
         $this->setAttribute($this->transUnit, 'approved', 'no');
         return $this;

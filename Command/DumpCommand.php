@@ -23,8 +23,8 @@ class DumpCommand extends ContainerAwareCommand {
 
         $this->setName('regelwerk:translation:dump')
                 ->addArgument('language', InputArgument::REQUIRED, 'language to dump')
-                ->addArgument('bundle', InputArgument::OPTIONAL, 'The bundle where to load the messages, defaults to app/Resources folder', null)
                 ->addArgument('domain', InputArgument::OPTIONAL, 'Single domain to dump', '*')
+                ->addArgument('bundle', InputArgument::OPTIONAL, 'The bundle where to load the messages, defaults to app/Resources folder', null)
                 ->addOption('force', 'f', InputOption::VALUE_NONE, 'Force dump, even if not all translations are approved')
                 ->addOption('dump-unapproved', 'a', InputOption::VALUE_NONE, 'If option force is set, keys without approval are dumped')
                 ->addOption('dump-untranslated', 't', InputOption::VALUE_NONE, 'If option force is set, keys without translation are dumped')
