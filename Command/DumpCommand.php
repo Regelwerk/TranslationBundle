@@ -16,7 +16,7 @@ use Symfony\Component\Intl\Intl;
  */
 class DumpCommand extends ContainerAwareCommand {
 
-    private $dryRun, $language, $translationPath, $output, $translationService;
+    private $language, $translationPath, $translationService;
 
     protected function configure() {
         parent::configure();
@@ -61,7 +61,6 @@ class DumpCommand extends ContainerAwareCommand {
             $output->writeln('<error>Error: Unknown language</error>');
             return 1;
         }
-        $this->output = $output;
     }
 
 }

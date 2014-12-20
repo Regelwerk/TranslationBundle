@@ -83,12 +83,9 @@ class TranslationController extends Controller {
             return $this->redirectToRoute('regelwerk_translation_domain', ['lang' => $lang, 'domain' => $domain]);
         }
         return $this->render('RegelwerkTranslationBundle:Translation:edit_key.html.twig', [
-                    'key' => $key,
                     'form' => $form->createView(),
                     'domain' => $domain,
                     'lang' => $lang,
-                    'originalText' => $translationUnit->getSourceText(),
-                    'state' => $translationUnit->getState(),
                     'approveButtonEnabled' => $translationUnit->canApprove($username),
         ]);
     }

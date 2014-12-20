@@ -182,7 +182,6 @@ class TranslationUnit {
             foreach ($keys as $key) {
                 unset($targetNotes[$key][0]);
             }
-            var_dump($sourceNotes);
             foreach ($sourceNotes as $note) {
                 $newNote = $this->transUnit->addChild('note', $note['text']);
                 if ($note['from']) {

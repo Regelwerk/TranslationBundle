@@ -2,8 +2,6 @@
 
 namespace Regelwerk\TranslationBundle\Xliff;
 
-use Regelwerk\TranslationBundle\Xliff\TranslationUnit as State;
-
 /**
  * Description of XliffFile
  *
@@ -11,12 +9,10 @@ use Regelwerk\TranslationBundle\Xliff\TranslationUnit as State;
  */
 class XliffFile implements \Iterator {
 
-    private $path, $domain, $language, $xliff, $transUnits = false;
+    private $path, $xliff, $transUnits = false;
 
     public function __construct($path, $domain, $language, $sourceLanguage = '') {
         $this->path = "{$path}/$domain.{$language}.xlf";
-        $this->domain = $domain;
-        $this->language = $language;
 
         if (!file_exists($this->path)) {
             $this->xliff = $this->getEmpty($language, $sourceLanguage);

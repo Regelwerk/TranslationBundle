@@ -5,15 +5,15 @@
 {% block rt_content %}
     <div class="row">
         <div class="col-md-offset-1 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
-            <h1>{{ 'edit_key_title' | trans({'%key%': key}) }}</h1>
+            <h1>{{ 'edit_key_title' | trans({'%key%': form.vars.data.translationKey}) }}</h1>
             {{ form_start(form) }}
             <div class="form-group ">
                 <label for="translation_form_original" class="required">{{ 'source_text' | trans }}</label>
-                <p id="translation_form_original" class="form-control-static">{{ originalText }}</p>
+                <p id="translation_form_original" class="form-control-static">{{ form.vars.data.sourceText }}</p>
             </div>    
             <div class="form-group ">
                 <label for="translation_form_state" class="required">{{ 'state' | trans }}</label>
-                <p id="translation_form_state" class="form-control-static">{{ state }}</p>
+                <p id="translation_form_state" class="form-control-static">{{ form.vars.data.state }}</p>
             </div>
             {% if form.vars.data.oldVersions %}
                 <div class="form-group ">
