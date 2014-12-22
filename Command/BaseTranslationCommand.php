@@ -3,6 +3,7 @@
 namespace Regelwerk\TranslationBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Intl\Intl;
 
 /**

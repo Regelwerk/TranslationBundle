@@ -14,8 +14,6 @@ use Symfony\Component\Console\Input\InputArgument;
  */
 class MergeCommand extends BaseTranslationCommand {
 
-    private $dryRun;
-
     protected function configure() {
         parent::configure();
         $this->setName('regelwerk:translation:merge')
