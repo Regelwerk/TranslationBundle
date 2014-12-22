@@ -96,6 +96,10 @@ class XliffFile implements \Iterator {
     public function isApproved() {
         return $this->getMissingTranslationCount() == 0 && $this->getMissingApprovalCount() == 0;
     }
+    
+    public function isTranslated() {
+        return $this->getMissingTranslationCount() == 0;
+    }
 
     private function getEmpty($lang, $sourceLang) {
         $date = date('c');
@@ -169,6 +173,13 @@ EOX
             }
         }
         return $nextKey;
+    }
+    
+    public function setApproved($username) {
+        foreach ($this->transUnits as $transUnit) {
+            $transUnit->setApproved($username, true);
+        }
+        return $this;
     }
 
 }

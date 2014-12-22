@@ -2,21 +2,16 @@
 
 namespace Regelwerk\TranslationBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Intl\Intl;
-
 /**
  * Description of UpdateTranslationFiles
  *
  * @author georg
  */
-class DumpCommand extends ContainerAwareCommand {
-
-    private $language, $translationPath, $translationService;
+class DumpCommand extends BaseTranslationCommand {
 
     protected function configure() {
         parent::configure();
@@ -33,8 +28,7 @@ class DumpCommand extends ContainerAwareCommand {
 
     protected function execute(InputInterface $input, OutputInterface $output) {
         $this->setup($input, $output);
-        $domains = $this->translationService
-                ->getDomains($input->getArgument('domain'));
+        $domains = $this->translationService->getDomains($input->getArgument('domain'));
         foreach ($domains as $domain) {
             $xliff = $this->translationService->getXliff($domain);
             if (!$xliff->isApproved() && !$input->getOption('force')) {
@@ -42,24 +36,6 @@ class DumpCommand extends ContainerAwareCommand {
             } else {
                 $this->translationService->dump($domain, $input->getOption('dump-unapproved'), $input->getOption('dump-untranslated'));
             }
-        }
-    }
-
-    private function setup($input, $output) {
-        $this->language = $input->getArgument('language');
-        $this->translationService = $this->getContainer()->get('regelwerk_translation')->setLang($this->language);
-        if (null !== $input->getArgument('bundle')) {
-            $this->translationService->setBundle($input->getArgument('bundle'));
-        } elseif (is_null($this->translationService->getBundle())) {
-            $this->translationPath = $this->getApplication()->getKernel()->getRootDir() . '/Resources/translations';
-            $this->translationService->setPath($this->translationPath);
-        }
-        \Locale::setDefault('en');
-
-        $languages = Intl::getLanguageBundle()->getLanguageNames();
-        if (!isset($languages[$input->getArgument('language')])) {
-            $output->writeln('<error>Error: Unknown language</error>');
-            return 1;
         }
     }
 
