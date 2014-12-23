@@ -23,5 +23,5 @@ $ ->
         $(@).select().one 'mouseup', (e) -> 
             e.preventDefault()
             
-    $('body.regelwerk-translation-bundle [data-toggle="tooltip"]').tooltip()
+    $('.regelwerk-translation-bundle-tooltip').tooltip()
             

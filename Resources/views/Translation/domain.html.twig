@@ -24,7 +24,7 @@
                 {% else %}
                     {% set tooltip = 'tooltip_approved' | trans %}
                 {% endif %}
-                <a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}" data-toggle="tooltip" title="{{ tooltip }}">
+                <a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}" data-toggle="tooltip" title="{{ tooltip }}" class="regelwerk-translation-bundle-tooltip">
                     <span class="glyphicon glyphicon-{{ transUnit.icon }}" aria-hidden="true"></span>
                 </a>
             </td>

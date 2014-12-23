@@ -36,7 +36,7 @@ author: georg
         return e.preventDefault();
       });
     });
-    return $('body.regelwerk-translation-bundle [data-toggle="tooltip"]').tooltip();
+    return $('.regelwerk-translation-bundle-tooltip').tooltip();
   });
 
 }).call(this);
