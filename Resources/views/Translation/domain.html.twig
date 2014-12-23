@@ -31,13 +31,7 @@
         </tr>
     {% endfor %}
         </tbody>
-{#        <tfoot>
-        <th>Summe</th>
-        <th>{{ summary.total }}</th>
-        <th>{{ summary.needsTranslation }}</th>
-        <th>{{ summary.notApproved }}</th>
-        </tfoot>
-#}    </table>
+    </table>
     <div class="clearfix">
         <a href="{{ path('regelwerk_translation_index', {lang: lang}) }}" class="btn btn-default pull-right">{{ 'to_index' | trans }}t</a>
     </div>
