@@ -8,7 +8,7 @@ $ ->
     code = (event) ->
         if event.which? then event.which else event.keyCode
 
-    $("form input").keypress (event) ->
+    $("body.regelwerk-translation-bundle form input").keypress (event) ->
         form = $(@).closest('form')
         # Only one submit button or more then one primary button? Don't do anything!
         return true if form.find(':submit').length < 2 or form.find('.btn-primary').length != 1
@@ -22,4 +22,6 @@ $ ->
     $('#regelwerk_translation_form_translation').focus ->
         $(@).select().one 'mouseup', (e) -> 
             e.preventDefault()
+            
+    $('body.regelwerk-translation-bundle [data-toggle="tooltip"]').tooltip()
             

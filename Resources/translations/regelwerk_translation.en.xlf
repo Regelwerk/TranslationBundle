@@ -84,6 +84,18 @@
                 <source>notes</source>
                 <target>Notes</target>
             </trans-unit>
+            <trans-unit id="tooltip_needs_translation">
+                <source>tooltip_needs_translation</source>
+                <target>translation missing</target>
+            </trans-unit>
+            <trans-unit id="tooltip_needs_approval">
+                <source>tooltip_needs_approval</source>
+                <target>approval missing</target>
+            </trans-unit>
+            <trans-unit id="tooltip_approved">
+                <source>tooltip_approved</source>
+                <target>Approved</target>
+            </trans-unit>
         </body>  
     </file>
 </xliff>

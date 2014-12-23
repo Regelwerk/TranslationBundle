@@ -45,7 +45,8 @@ class TranslationController extends Controller {
             $mappedTransUnits[] = [
                 'source' => (string) $transUnit->getTranslationKey(),
                 'target' => (string) $transUnit->getTranslation(),
-                'state' => $bootstrapIconMap[$transUnit->getState()],
+                'state' => $transUnit->getState(),
+                'icon' => $bootstrapIconMap[$transUnit->getState()],
             ];
         }
         return $this->render('RegelwerkTranslationBundle:Translation:domain.html.twig', [

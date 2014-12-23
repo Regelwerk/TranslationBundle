@@ -16,7 +16,18 @@
         <tr class="{% if transUnit.state == 'pencil' %}danger{% elseif transUnit.state == 'eye-open' %}warning{% endif %}">
             <td>{{ transUnit.source }}</td>
             <td><a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}">{{ transUnit.target }}</a></td>
-            <td><span class="glyphicon glyphicon-{{ transUnit.state }}" aria-hidden="true"></span></td>
+            <td>
+                {% if transUnit.state == 'needs-translation' %}
+                    {% set tooltip = 'tooltip_needs_translation' | trans %}
+                {% elseif transUnit.state == 'needs-approval' %}
+                    {% set tooltip = 'tooltip_needs_approval' | trans %}
+                {% else %}
+                    {% set tooltip = 'tooltip_approved' | trans %}
+                {% endif %}
+                <a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}" data-toggle="tooltip" title="{{ tooltip }}">
+                    <span class="glyphicon glyphicon-{{ transUnit.icon }}" aria-hidden="true"></span>
+                </a>
+            </td>
         </tr>
     {% endfor %}
         </tbody>

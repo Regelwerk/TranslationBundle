@@ -210,6 +210,27 @@
           <target>Notes</target>
         </alt-trans>
       </trans-unit>
+      <trans-unit approved="no" id="tooltip_needs_translation" extradata="last-edit:georg">
+        <source>tooltip_needs_translation</source>
+        <target state="translated">Fehlende Übersetzung</target>
+        <alt-trans alttranstype="reference">
+          <target>translation missing</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="tooltip_needs_approval" extradata="last-edit:georg">
+        <source>tooltip_needs_approval</source>
+        <target state="translated">Bestätigung ausständig</target>
+        <alt-trans alttranstype="reference">
+          <target>approval missing</target>
+        </alt-trans>
+      </trans-unit>
+      <trans-unit approved="no" id="tooltip_approved" extradata="last-edit:georg">
+        <source>tooltip_approved</source>
+        <target state="translated">Bestätigt</target>
+        <alt-trans alttranstype="reference">
+          <target>Approved</target>
+        </alt-trans>
+      </trans-unit>
     </body>
   </file>
 </xliff>

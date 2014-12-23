@@ -78,6 +78,18 @@
         <source>save_changed_translation</source>
         <target>Geänderte Übersetzung speichern</target>
       </trans-unit>
+      <trans-unit id="tooltip_needs_translation">
+        <source>tooltip_needs_translation</source>
+        <target>Fehlende Übersetzung</target>
+      </trans-unit>
+      <trans-unit id="tooltip_needs_approval">
+        <source>tooltip_needs_approval</source>
+        <target>Bestätigung ausständig</target>
+      </trans-unit>
+      <trans-unit id="tooltip_approved">
+        <source>tooltip_approved</source>
+        <target>Bestätigt</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

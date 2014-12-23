@@ -18,7 +18,7 @@ author: georg
         return event.keyCode;
       }
     };
-    $("form input").keypress(function(event) {
+    $("body.regelwerk-translation-bundle form input").keypress(function(event) {
       var form;
       form = $(this).closest('form');
       if (form.find(':submit').length < 2 || form.find('.btn-primary').length !== 1) {
@@ -31,11 +31,12 @@ author: georg
         return true;
       }
     });
-    return $('#regelwerk_translation_form_translation').focus(function() {
+    $('#regelwerk_translation_form_translation').focus(function() {
       return $(this).select().one('mouseup', function(e) {
         return e.preventDefault();
       });
     });
+    return $('body.regelwerk-translation-bundle [data-toggle="tooltip"]').tooltip();
   });
 
 }).call(this);
