@@ -13,7 +13,7 @@
         </thead>
         <tbody>
     {% for transUnit in transUnits if transUnit.source %}
-        <tr class="{% if transUnit.state == 'pencil' %}danger{% elseif transUnit.state == 'eye-open' %}warning{% endif %}">
+        <tr class="{% if not transUnit.translated %}danger{% elseif not transUnit.approved %}warning{% endif %}">
             <td>{{ transUnit.source }}</td>
             <td><a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}">{{ transUnit.target }}</a></td>
             <td>
