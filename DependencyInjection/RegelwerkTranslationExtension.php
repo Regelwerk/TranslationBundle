@@ -22,8 +22,9 @@ class RegelwerkTranslationExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('regelwerk_translation.state_dir', $config['state_dir']);
-        $container->setParameter('regelwerk_translation.source_language', $config['source_language']);
+        $container->setParameter('regelwerk_translation.source_locale', $config['source_language']);
         $container->setParameter('regelwerk_translation.bundle', $config['bundle']);
+        $container->setParameter('regelwerk_translation.locales', $config['locales']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');

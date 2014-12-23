@@ -2,7 +2,7 @@ services:
     regelwerk_translation:
         class: Regelwerk\TranslationBundle\Service\TranslationService
         arguments:
-            - "%regelwerk_translation.source_language%"
+            - "%regelwerk_translation.source_locale%"
             - "%regelwerk_translation.state_dir%"
             - "@kernel"
             - "%regelwerk_translation.bundle%"
