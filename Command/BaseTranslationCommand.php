@@ -19,6 +19,7 @@ abstract class BaseTranslationCommand extends ContainerAwareCommand {
 
     protected function setup($input, $output) {
         \Locale::setDefault('en');
+        $this->translationService = $this->getContainer()->get('regelwerk_translation');
         if ($input->getArgument('language') && $input->getArgument('language') != 'all') {
             $languages = Intl::getLanguageBundle()->getLanguageNames();
             if (!isset($languages[$input->getArgument('language')])) {
@@ -28,8 +29,11 @@ abstract class BaseTranslationCommand extends ContainerAwareCommand {
             $this->languages = explode(',', $input->getArgument('language'));
         } else {
             $this->languages = $this->getContainer()->getParameter('regelwerk_translation.locales');
+            $key = array_search($this->translationService->getSourceLang(), $this->languages);
+            if ($key !== false) {
+                unset($this->languages[$key]);
+            }
         }
-        $this->translationService = $this->getContainer()->get('regelwerk_translation');
         if (null !== $input->getArgument('bundle')) {
             $this->translationService->setBundle($input->getArgument('bundle'));
         } elseif (is_null($this->translationService->getBundle())) {

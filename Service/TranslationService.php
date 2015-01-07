@@ -31,6 +31,10 @@ class TranslationService {
         return $this;
     }
 
+    public function getSourceLang() {
+        return $this->sourceLang;
+    }
+
     public function setLang($lang) {
         $this->lang = $lang;
         return $this;
@@ -71,7 +75,7 @@ class TranslationService {
             'nextKey' => $xliff->getNextEditableKey('', $username),
         ];
     }
-
+    
     public function getXLiff($domain, $lang = '') {
         if ($lang == '') {
             $lang = $this->lang;
