@@ -20,7 +20,7 @@ class MergeCommand extends BaseTranslationCommand {
 
     protected function payload($domain) {
         $this->info("Processing <info>$domain</info>");
-        foreach ($this->translationService->merge($domain, $this->language, $this->input->getOption('dry-run'), true) as $message) {
+        foreach ($this->translationService->merge($domain, '', $this->input->getOption('dry-run'), true) as $message) {
             $this->info($message);
         }
     }

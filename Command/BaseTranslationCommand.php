@@ -56,7 +56,7 @@ abstract class BaseTranslationCommand extends ContainerAwareCommand {
 
     protected function execute(InputInterface $input, OutputInterface $output) {
         $this->setup($input, $output);
-        $domains = $this->translationService->getDomains($input->getArgument('domain'));
+        $domains = $this->translationService->getDomains($input->getArgument('domain') == 'all' ? '*' : $input->getArgument('domain'));
         foreach ($this->languages as $language) {
             $this->translationService->setLang($language);
             foreach ($domains as $domain) {
