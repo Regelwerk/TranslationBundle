@@ -60,7 +60,7 @@ abstract class BaseTranslationCommand extends ContainerAwareCommand {
         foreach ($this->languages as $language) {
             $this->translationService->setLang($language);
             foreach ($domains as $domain) {
-                $this->paylod($domain);
+                $this->payload($domain);
             }
         }
     }
