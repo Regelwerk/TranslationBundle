@@ -4,7 +4,7 @@
     <body>
       <trans-unit approved="no" id="domain_title" extradata="last-edit:georg">
         <source>domain_title</source>
-        <target state="translated">Bereich %domain% (%lang%)</target>
+        <target state="translated">Kategorie %domain% (%lang%)</target>
         <alt-trans alttranstype="reference">
           <target>Domain %domain% (%lang%)</target>
         </alt-trans>
@@ -107,7 +107,7 @@
       </trans-unit>
       <trans-unit approved="no" id="domain" extradata="last-edit:georg">
         <source>domain</source>
-        <target state="translated">Bereich</target>
+        <target state="translated">Kategorie</target>
         <alt-trans alttranstype="reference">
           <target>Domain</target>
         </alt-trans>

@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="domain_title">
         <source>domain_title</source>
-        <target>Bereich %domain% (%lang%)</target>
+        <target>Kategorie %domain% (%lang%)</target>
       </trans-unit>
       <trans-unit id="key">
         <source>key</source>
@@ -44,7 +44,7 @@
       </trans-unit>
       <trans-unit id="domain">
         <source>domain</source>
-        <target>Bereich</target>
+        <target>Kategorie</target>
       </trans-unit>
       <trans-unit id="total">
         <source>total</source>
