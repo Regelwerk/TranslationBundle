@@ -38,6 +38,10 @@
         <source>cancel</source>
         <target>Abbrechen</target>
       </trans-unit>
+      <trans-unit id="skip">
+        <source>skip</source>
+        <target>Überspringen</target>
+      </trans-unit>
       <trans-unit id="index_title">
         <source>index_title</source>
         <target>Sprache (%lang%)</target>

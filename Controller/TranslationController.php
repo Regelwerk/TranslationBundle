@@ -72,7 +72,14 @@ class TranslationController extends Controller {
         $translationUnit = $xliff->get($key);
         $form = $this->createForm(new TranslationType(), $translationUnit);
         if ($form->handleRequest($request)->isValid()) {
-            if ($form->has('translated') && $form->get('translated')->isClicked()) {
+            if ($form->get('skip')->isClicked()) {
+                $nextKey = $xliff->getNextEditableKey($key, $username);
+                if ($nextKey) {
+                    return $this->redirectToRoute('regelwerk_translation_edit_key', ['lang' => $lang, 'domain' => $domain, 'key' => $nextKey]);
+                } else {
+                    return $this->redirectToRoute('regelwerk_translation_domain', ['lang' => $lang, 'domain' => $domain]);
+                }
+            } elseif ($form->has('translated') && $form->get('translated')->isClicked()) {
                 $translationUnit->setTranslated($username);
             } elseif ($form->has('approve') && $form->get('approve')->isClicked()) {
                 $translationUnit->setApproved($username);

@@ -95,6 +95,13 @@
           <target>Cancel</target>
         </alt-trans>
       </trans-unit>
+      <trans-unit approved="no" id="skip" extradata="last-edit:georg">
+        <source>skip</source>
+        <target state="translated">Überspringen</target>
+        <alt-trans alttranstype="reference">
+          <target>Skip entry</target>
+        </alt-trans>
+      </trans-unit>
       <trans-unit approved="no" id="index_title" extradata="last-edit:georg">
         <source>index_title</source>
         <target state="translated">Sprache (%lang%)</target>

@@ -59,6 +59,7 @@ class TranslationType extends AbstractType {
                         ->add('translated', 'submit', ['label' => 'save_changed_translation']);
                 break;
         }
+        $form->add('skip', 'submit', ['label' => 'skip']);
     }
 
 }

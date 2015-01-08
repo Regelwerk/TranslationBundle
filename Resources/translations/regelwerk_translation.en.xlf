@@ -38,6 +38,10 @@
                 <source>cancel</source>
                 <target>Cancel</target>
             </trans-unit>
+            <trans-unit id="skip">
+                <source>skip</source>
+                <target>Skip entry</target>
+            </trans-unit>
             <trans-unit id="index_title">
                 <source>index_title</source>
                 <target>Language (%lang%)</target>
