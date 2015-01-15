@@ -31,6 +31,14 @@ class TranslationUnit {
     public function getTranslation() {
         return (string) $this->transUnit->target;
     }
+    
+    public function needsTranslation() {
+        return $this->getState() == self::STATE_NEEDS_TRANSLATION;
+    }
+    
+    public function needsApproval() {
+        return $this->getState() == self::STATE_NEEDS_APPROVAL;
+    }
 
     public function getState() {
         if (!isset($this->transUnit->target['state']) || $this->transUnit->target['state'] == 'needs-translation') {

@@ -24,4 +24,13 @@ $ ->
             e.preventDefault()
             
     $('.regelwerk-translation-bundle-tooltip').tooltip()
-            
+    
+    searchTerm = $('.regelwerk-translation-matches').data('translationTerm')
+    regExp = new RegExp(searchTerm, 'gim')
+    highlight = (element) ->
+        newText = $(element).text().replace(regExp, '<mark>$&</mark>')
+        $(element).html(newText)
+        
+    $('.regelwerk-translation-matches .regelwerk-translation-key, .regelwerk-translation-matches .regelwerk-translation-source, .regelwerk-translation-matches .regelwerk-translation-translation')
+    .each ->
+        highlight @

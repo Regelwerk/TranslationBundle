@@ -13,3 +13,8 @@ regelwerk_translation_edit_key:
     defaults: { _controller: RegelwerkTranslationBundle:Translation:editKey }
     methods: [get, post]
     
+regelwerk_translation_search:
+    path: /translator/{lang}/search
+    defaults: { _controller: RegelwerkTranslationBundle:Translation:search }
+    methods: [post]
+    

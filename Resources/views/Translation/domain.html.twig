@@ -1,7 +1,10 @@
 {% extends "RegelwerkTranslationBundle::layout.html.twig" %}
 {% trans_default_domain 'regelwerk_translation' %}
+{% from "RegelwerkTranslationBundle:Translation:_macros.html.twig" import edit as edit_button %}
+{% from "RegelwerkTranslationBundle:Translation:_macros.html.twig" import search_form as search_form %}
 
 {% block rt_content %}
+    {{ search_form(form) }}
     <h1>{{ 'domain_title' | trans({'%domain%': domain, '%lang%': lang}) }}</h1>
     <table class="table table-condensed table-hover">
         <thead>
@@ -12,21 +15,12 @@
             </tr>
         </thead>
         <tbody>
-    {% for transUnit in transUnits if transUnit.source %}
-        <tr class="{% if transUnit.state == 'needs-translation' %}danger{% elseif transUnit.state == 'needs-approval' %}warning{% endif %}">
-            <td>{{ transUnit.source }}</td>
-            <td><a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}">{{ transUnit.target }}</a></td>
+    {% for transUnit in transUnits if transUnit.translationKey %}
+        <tr class="{% if transUnit.needsTranslation() %}danger{% elseif transUnit.needsApproval() %}warning{% endif %}">
+            <td>{{ transUnit.translationKey }}</td>
+            <td><a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.translationKey, lang: lang}) }}">{{ transUnit.translation }}</a></td>
             <td>
-                {% if transUnit.state == 'needs-translation' %}
-                    {% set tooltip = 'tooltip_needs_translation' | trans %}
-                {% elseif transUnit.state == 'needs-approval' %}
-                    {% set tooltip = 'tooltip_needs_approval' | trans %}
-                {% else %}
-                    {% set tooltip = 'tooltip_approved' | trans %}
-                {% endif %}
-                <a href="{{ path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.source, lang: lang}) }}" data-toggle="tooltip" title="{{ tooltip }}" class="regelwerk-translation-bundle-tooltip">
-                    <span class="glyphicon glyphicon-{{ transUnit.icon }}" aria-hidden="true"></span>
-                </a>
+                {{ edit_button(transUnit, path('regelwerk_translation_edit_key', {domain: domain, key: transUnit.translationKey, lang: lang})) }}
             </td>
         </tr>
     {% endfor %}

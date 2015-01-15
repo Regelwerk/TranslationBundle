@@ -1,0 +1,35 @@
+{% trans_default_domain 'regelwerk_translation' %}
+{% macro edit(transUnit, url) %}
+    {% from _self import icon as icon %}
+    {% if transUnit.state == 'needs-translation' %}
+        {% set tooltip = 'tooltip_needs_translation' | trans %}
+    {% elseif transUnit.state == 'needs-approval' %}
+        {% set tooltip = 'tooltip_needs_approval' | trans %}
+    {% else %}
+        {% set tooltip = 'tooltip_approved' | trans %}
+    {% endif %}
+    <a href="{{ url }}" data-toggle="tooltip" title="{{ tooltip }}" class="regelwerk-translation-bundle-tooltip">
+        <span class="{{ icon(transUnit) }}" aria-hidden="true"></span>
+    </a>
+{% endmacro %}
+
+{% macro icon(transUnit) -%}
+    {%- if transUnit.needsTranslation() -%}
+        glyphicon glyphicon-pencil
+    {%- elseif transUnit.needsApproval() -%}
+        glyphicon glyphicon-eye-open
+    {%- else -%}  
+        glyphicon glyphicon-ok
+    {% endif %}
+{% endmacro %}
+    
+{% macro search_form(form) %}
+    {{ form_start(form) }}
+        <div class="input-group">
+            {{ form_widget(form.search, {attr: {class: 'form-control'}}) }}
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"> </span></button>
+            </span>
+        </div>
+    {{ form_end(form) }}
+{% endmacro %}

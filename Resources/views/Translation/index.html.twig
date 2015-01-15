@@ -1,7 +1,9 @@
 {% extends "RegelwerkTranslationBundle::layout.html.twig" %}
 {% trans_default_domain 'regelwerk_translation' %}
+{% from "RegelwerkTranslationBundle:Translation:_macros.html.twig" import search_form as search_form %}
 
 {% block rt_content %}
+    {{ search_form(form) }}
     <h1>{{ 'index_title' | trans({'%lang%': lang}) }}</h1>
     <table class="table table-condensed table-hover">
         <thead>

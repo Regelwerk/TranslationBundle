@@ -100,6 +100,14 @@
                 <source>tooltip_approved</source>
                 <target>Approved</target>
             </trans-unit>
+            <trans-unit id="search_field">
+                <source>search_field</source>
+                <target>Find ...</target>
+            </trans-unit>
+            <trans-unit id="found_title">
+                <source>found_title</source>
+                <target>Searching for "%search%"</target>
+            </trans-unit>
         </body>  
     </file>
 </xliff>

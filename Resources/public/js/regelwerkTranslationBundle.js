@@ -10,7 +10,7 @@ author: georg
   $ = jQuery;
 
   $(function() {
-    var code;
+    var code, highlight, regExp, searchTerm;
     code = function(event) {
       if (event.which != null) {
         return event.which;
@@ -36,7 +36,17 @@ author: georg
         return e.preventDefault();
       });
     });
-    return $('.regelwerk-translation-bundle-tooltip').tooltip();
+    $('.regelwerk-translation-bundle-tooltip').tooltip();
+    searchTerm = $('.regelwerk-translation-matches').data('translationTerm');
+    regExp = new RegExp(searchTerm, 'gim');
+    highlight = function(element) {
+      var newText;
+      newText = $(element).text().replace(regExp, '<mark>$&</mark>');
+      return $(element).html(newText);
+    };
+    return $('.regelwerk-translation-matches .regelwerk-translation-key, .regelwerk-translation-matches .regelwerk-translation-source, .regelwerk-translation-matches .regelwerk-translation-translation').each(function() {
+      return highlight(this);
+    });
   });
 
 }).call(this);

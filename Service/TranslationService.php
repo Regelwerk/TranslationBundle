@@ -12,6 +12,11 @@ use Regelwerk\TranslationBundle\Xliff\XliffFile;
  */
 class TranslationService {
 
+    const SEARCH_IN_SOURCE = 1;
+    const SEARCH_IN_TARGET = 2;
+    const SEARCH_IN_KEYS = 4;
+    const SEARCH_EVERYWHERE = 7;
+
     private $path, $lang, $sourceLang, $kernel, $bundle = null, $stateDir;
 
     public function __construct($sourceLang = '', $stateDir = 'regelwerk_translation_state', $kernel = null, $bundle = '') {
@@ -53,6 +58,11 @@ class TranslationService {
         return $this->bundle;
     }
 
+    /**
+     * 
+     * @param string $domain
+     * @return array
+     */
     public function getDomains($domain = '*') {
         if ($domain != '*') {
             return [$domain];
@@ -66,6 +76,12 @@ class TranslationService {
         return $domains;
     }
 
+    /**
+     * 
+     * @param string $domain
+     * @param string $username
+     * @return array
+     */
     public function getStats($domain, $username) {
         $xliff = new XliffFile($this->path . '/' . $this->stateDir, $domain, $this->lang, $this->sourceLang);
         return [
@@ -75,7 +91,13 @@ class TranslationService {
             'nextKey' => $xliff->getNextEditableKey('', $username),
         ];
     }
-    
+
+    /**
+     * 
+     * @param string $domain
+     * @param string $lang
+     * @return XliffFile
+     */
     public function getXLiff($domain, $lang = '') {
         if ($lang == '') {
             $lang = $this->lang;
@@ -83,10 +105,23 @@ class TranslationService {
         return new XliffFile($this->path . '/' . $this->stateDir, $domain, $lang, $this->sourceLang);
     }
 
+    /**
+     * 
+     * @param string $domain
+     * @return XliffFile
+     */
     public function getSourceXliff($domain) {
         return new XliffFile($this->path, $domain, $this->sourceLang);
     }
 
+    /**
+     * 
+     * @param string $domain
+     * @param string $lang
+     * @param boolean $dryRun
+     * @param boolean $formatted
+     * @return array of messages
+     */
     public function merge($domain, $lang = '', $dryRun = true, $formatted = false) {
         if ($lang == '') {
             $lang = $this->lang;
@@ -115,7 +150,7 @@ class TranslationService {
                     $messages[] = "Updating source sting: <comment>$key</comment>";
                     $changed = true;
                 }
-                if ($translationUnitTarget->updateNotes($translationUnitSource)){
+                if ($translationUnitTarget->updateNotes($translationUnitSource)) {
                     $messages[] = "Updating notes: <comment>$key</comment>";
                     $changed = true;
                 }
@@ -132,6 +167,13 @@ class TranslationService {
         });
     }
 
+    /**
+     * 
+     * @param string $domain
+     * @param boolean $dumpUnapproved
+     * @param boolean $dumpUntranslated
+     * @param string $lang
+     */
     public function dump($domain, $dumpUnapproved = true, $dumpUntranslated = false, $lang = '') {
         if ($lang == '') {
             $lang = $this->lang;
@@ -139,6 +181,31 @@ class TranslationService {
         $xliff = $this->getXliff($domain, $lang);
         $xml = $xliff->dumpClean($lang, $this->sourceLang, $dumpUnapproved, $dumpUntranslated);
         file_put_contents("{$this->path}/$domain.{$lang}.xlf", $xml);
+    }
+
+    /**
+     * 
+     * @param string $search
+     * @param string $domain
+     * @param integer $searchIn
+     * @param string $lang
+     */
+    public function find($search, $domain, $searchIn = self::SEARCH_EVERYWHERE, $lang = '') {
+        if ($lang == '') {
+            $lang = $this->lang;
+        }
+        $matches = [];
+        $xliffTarget = $this->getXliff($domain, $lang);
+        foreach ($xliffTarget as $translationUnit) {
+            if (
+                    (($searchIn & self::SEARCH_IN_KEYS) && stripos($translationUnit->getTranslationKey(), $search) !== false) ||
+                    (($searchIn & self::SEARCH_IN_SOURCE) && stripos($translationUnit->getSourceText(), $search) !== false) ||
+                    (($searchIn & self::SEARCH_IN_TARGET) && stripos($translationUnit->getTranslation(), $search) !== false)
+            ) {
+                $matches[] = $translationUnit;
+            }
+        }
+        return $matches;
     }
 
 }
