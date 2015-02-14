@@ -19,7 +19,7 @@ class TranslationService {
 
     private $path, $lang, $sourceLang, $kernel, $bundle = null, $stateDir;
 
-    public function __construct($sourceLang = '', $stateDir = 'regelwerk_translation_state', $kernel = null, $bundle = '') {
+    public function __construct($sourceLang = '', $stateDir = 'data/regelwerk/translation_state', $kernel = null, $bundle = '') {
         $this->kernel = $kernel;
         $this->setSourceLang($sourceLang);
         $this->setBundle($bundle);
@@ -49,7 +49,7 @@ class TranslationService {
         if ($bundle && is_null($this->kernel)) {
             throw new \LogicException('setBundle must have a kernel');
         }
-        $this->setPath($this->kernel->getBundle($bundle)->getPath() . '/Resources/translations');
+        $this->setPath($this->kernel->getBundle($bundle)->getPath());
         $this->bundle = $bundle;
         return $this;
     }
@@ -59,7 +59,7 @@ class TranslationService {
     }
 
     /**
-     * 
+     *
      * @param string $domain
      * @return array
      */
@@ -68,7 +68,7 @@ class TranslationService {
             return [$domain];
         }
         $finder = new Finder();
-        $finder->files()->ignoreDotFiles(true)->name("/\\.{$this->sourceLang}\\.xlf$/")->in($this->path);
+        $finder->files()->ignoreDotFiles(true)->name("/\\.{$this->sourceLang}\\.xlf$/")->in($this->getTranslationDir());
         $domains = [];
         foreach ($finder as $file) {
             $domains[] = substr($file->getBasename(), 0, -7);
@@ -76,14 +76,22 @@ class TranslationService {
         return $domains;
     }
 
+    protected function getTranslationDir() {
+        return $this->path . '/Resources/translations';
+    }
+
+    protected function getStateDir() {
+        return $this->path . '/' . $this->stateDir;
+    }
+
     /**
-     * 
+     *
      * @param string $domain
      * @param string $username
      * @return array
      */
     public function getStats($domain, $username) {
-        $xliff = new XliffFile($this->path . '/' . $this->stateDir, $domain, $this->lang, $this->sourceLang);
+        $xliff = new XliffFile($this->getStateDir(), $domain, $this->lang, $this->sourceLang);
         return [
             'total' => $xliff->getEntryCount(),
             'needsTranslation' => $xliff->getMissingTranslationCount(),
@@ -93,7 +101,7 @@ class TranslationService {
     }
 
     /**
-     * 
+     *
      * @param string $domain
      * @param string $lang
      * @return XliffFile
@@ -102,20 +110,20 @@ class TranslationService {
         if ($lang == '') {
             $lang = $this->lang;
         }
-        return new XliffFile($this->path . '/' . $this->stateDir, $domain, $lang, $this->sourceLang);
+        return new XliffFile($this->getStateDir(), $domain, $lang, $this->sourceLang);
     }
 
     /**
-     * 
+     *
      * @param string $domain
      * @return XliffFile
      */
     public function getSourceXliff($domain) {
-        return new XliffFile($this->path, $domain, $this->sourceLang);
+        return new XliffFile($this->getTranslationDir(), $domain, $this->sourceLang);
     }
 
     /**
-     * 
+     *
      * @param string $domain
      * @param string $lang
      * @param boolean $dryRun
@@ -168,7 +176,7 @@ class TranslationService {
     }
 
     /**
-     * 
+     *
      * @param string $domain
      * @param boolean $dumpUnapproved
      * @param boolean $dumpUntranslated
@@ -180,11 +188,11 @@ class TranslationService {
         }
         $xliff = $this->getXliff($domain, $lang);
         $xml = $xliff->dumpClean($lang, $this->sourceLang, $dumpUnapproved, $dumpUntranslated);
-        file_put_contents("{$this->path}/$domain.{$lang}.xlf", $xml);
+        file_put_contents($this->getTranslationDir() . "/{$domain}.{$lang}.xlf", $xml);
     }
 
     /**
-     * 
+     *
      * @param string $search
      * @param string $domain
      * @param integer $searchIn
