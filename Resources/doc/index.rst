@@ -8,7 +8,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```bash
-$ php composer.phar require RegelwerkTranslationBundle "master@dev"
+$ php composer.phar require RegelwerkTranslationBundle "~0.1"
 ```
 
 This command requires you to have Composer installed globally, as explained
