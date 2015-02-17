@@ -252,6 +252,20 @@
                     <target>Searching for "%search%"</target>
                 </alt-trans>
             </trans-unit>
+            <trans-unit approved="yes" id="dump_unapproved" extradata="last-edit:georg">
+                <source>dump_unapproved</source>
+                <target state="translated">Mit unbestätigten Übersetzungen</target>
+                <alt-trans alttranstype="reference">
+                    <target>Include translations without approval</target>
+                </alt-trans>
+            </trans-unit>
+            <trans-unit approved="yes" id="dump_to_dev" extradata="last-edit:georg">
+                <source>dump_to_dev</source>
+                <target state="translated">Im Entwicklungssystem freigeben</target>
+                <alt-trans alttranstype="reference">
+                    <target>Write to development</target>
+                </alt-trans>
+            </trans-unit>
         </body>
     </file>
 </xliff>

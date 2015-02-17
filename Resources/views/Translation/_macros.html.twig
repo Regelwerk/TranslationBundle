@@ -33,3 +33,13 @@
         </div>
     {{ form_end(form) }}
 {% endmacro %}
+
+{% macro dump_form(form) %}
+    {{ form_start(form, {attr: {class: 'form-inline'}}) }}
+        <div class="form-group">
+            {{ form_label(form.dumpUnapproved) }}
+            {{ form_widget(form.dumpUnapproved, {attr: {class: 'form-control'}}) }}
+        </div>
+        <button class="btn btn-default" type="submit">{{ 'dump_to_dev' | trans }}</button>
+    {{ form_end(form) }}
+{% endmacro %}

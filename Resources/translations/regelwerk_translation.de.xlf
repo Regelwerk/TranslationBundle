@@ -102,6 +102,14 @@
                 <source>found_title</source>
                 <target>Suche nach "%search%"</target>
             </trans-unit>
+            <trans-unit id="dump_unapproved">
+                <source>dump_unapproved</source>
+                <target>Mit unbestätigten Übersetzungen</target>
+            </trans-unit>
+            <trans-unit id="dump_to_dev">
+                <source>dump_to_dev</source>
+                <target>Im Entwicklungssystem freigeben</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

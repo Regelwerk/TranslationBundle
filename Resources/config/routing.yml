@@ -18,3 +18,8 @@ regelwerk_translation_search:
     defaults: { _controller: RegelwerkTranslationBundle:Translation:search }
     methods: [post]
     
+regelwerk_translation_dump:
+    path: /translator/{lang}/dump
+    defaults: { _controller: RegelwerkTranslationBundle:Translation:dump }
+    methods: [post]
+    

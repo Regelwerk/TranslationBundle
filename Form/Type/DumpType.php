@@ -7,23 +7,21 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * Description of SearchType
+ * Description of TranslationForm
  *
  * @author georg
  */
-class SearchType extends AbstractType {
+class DumpType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-                ->add('search', 'text', [
-                    'label' => 'search_field',
-                    'attr' => ['autofocus' => true, 'placeholder' => 'search_field'],
-                    'required' => true,
+                ->add('dumpUnapproved', 'checkbox', [
+                    'label' => 'dump_unapproved',
         ]);
     }
 
     public function getName() {
-        return 'regelwerk_search_form';
+        return 'regelwerk_dump_form';
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver) {

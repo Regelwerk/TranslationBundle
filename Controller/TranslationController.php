@@ -4,6 +4,7 @@ namespace Regelwerk\TranslationBundle\Controller;
 
 use Regelwerk\TranslationBundle\Form\Type\TranslationType;
 use Regelwerk\TranslationBundle\Form\Type\SearchType;
+use Regelwerk\TranslationBundle\Form\Type\DumpType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -13,8 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
  * @author georg
  */
 class TranslationController extends Controller {
-
-    const TRANSLATION_DOMAIN = 'translation';
 
     public function indexAction($lang) {
         $this->denyAccessUnlessGranted('ROLE_TRANSLATOR', $lang);
@@ -32,7 +31,8 @@ class TranslationController extends Controller {
                         'notApproved' => array_sum(array_column($stats, 'notApproved')),
                     ],
                     'lang' => $lang,
-                    'form' => $this->getSearchForm($lang)->createView(),
+                    'searchForm' => $this->getSearchForm($lang)->createView(),
+                    'dumpForm' => $this->getDumpForm($lang)->createView(),
         ]);
     }
 
@@ -81,7 +81,7 @@ class TranslationController extends Controller {
                     'approveButtonEnabled' => $translationUnit->canApprove($username),
         ]);
     }
-    
+
     public function searchAction($lang, Request $request) {
         $form = $this->getSearchForm($lang);
         if ($form->handleRequest($request)->isValid()) {
@@ -92,18 +92,45 @@ class TranslationController extends Controller {
                 $matches[$domain] = $translation->find($form->get('search')->getData(), $domain);
             }
             return $this->render('RegelwerkTranslationBundle:Translation:search.html.twig', [
-                    'lang' => $lang,
-                    'matches' => array_filter($matches),
-                    'search' => $form->get('search')->getData(),
-                    'form' => $form->createView(),
-        ]);
+                        'lang' => $lang,
+                        'matches' => array_filter($matches),
+                        'search' => $form->get('search')->getData(),
+                        'form' => $form->createView(),
+            ]);
         }
         return $this->redirectToRoute('regelwerk_translation_index', ['lang' => $lang]);
     }
-    
-    private function getSearchForm($lang){
-        $formOptions = ['action' => $this->generateUrl('regelwerk_translation_search', ['lang' => $lang])];
-        return $this->createForm(new SearchType(), null, $formOptions);
+
+    public function dumpAction($lang, Request $request) {
+        $form = $this->getDumpForm($lang);
+        if ($form->handleRequest($request)->isValid()) {
+            $translation = $this->get('regelwerk_translation')->setLang($lang);
+            $domains = $translation->getDomains();
+            foreach ($domains as $domain) {
+                $translation->dump($domain, $form->get('dumpUnapproved')->getData());
+            }
+        }
+        return $this->redirectToRoute('regelwerk_translation_index', ['lang' => $lang]);
+    }
+
+    /**
+     * 
+     * @param string $lang
+     * @return Symfony\Component\Form\Form
+     */
+    private function getSearchForm($lang) {
+        $options = ['action' => $this->generateUrl('regelwerk_translation_search', ['lang' => $lang])];
+        return $this->createForm(new SearchType(), null, $options);
+    }
+
+    /**
+     * 
+     * @param string $lang
+     * @return Symfony\Component\Form\Form
+     */
+    private function getDumpForm($lang) {
+        $options = ['action' => $this->generateUrl('regelwerk_translation_dump', ['lang' => $lang])];
+        return $this->createForm(new DumpType(), null, $options);
     }
 
 }
