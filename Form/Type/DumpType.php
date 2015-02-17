@@ -17,6 +17,7 @@ class DumpType extends AbstractType {
         $builder
                 ->add('dumpUnapproved', 'checkbox', [
                     'label' => 'dump_unapproved',
+                    'required' => false,
         ]);
     }
 
