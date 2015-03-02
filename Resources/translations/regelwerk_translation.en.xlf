@@ -108,6 +108,14 @@
                 <source>found_title</source>
                 <target>Searching for "%search%"</target>
             </trans-unit>
+            <trans-unit id="dump_unapproved">
+                <source>dump_unapproved</source>
+                <target>Include translations without approval</target>
+            </trans-unit>
+            <trans-unit id="dump_to_dev">
+                <source>dump_to_dev</source>
+                <target>Write to development</target>
+            </trans-unit>
         </body>  
     </file>
 </xliff>

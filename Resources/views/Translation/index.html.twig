@@ -1,9 +1,10 @@
 {% extends "RegelwerkTranslationBundle::layout.html.twig" %}
 {% trans_default_domain 'regelwerk_translation' %}
 {% from "RegelwerkTranslationBundle:Translation:_macros.html.twig" import search_form as search_form %}
+{% from "RegelwerkTranslationBundle:Translation:_macros.html.twig" import dump_form as dump_form %}
 
 {% block rt_content %}
-    {{ search_form(form) }}
+    {{ search_form(searchForm) }}
     <h1>{{ 'index_title' | trans({'%lang%': lang}) }}</h1>
     <table class="table table-condensed table-hover">
         <thead>
@@ -27,10 +28,13 @@
     {% endfor %}
         </tbody>
         <tfoot>
-        <th>Summe</th>
-        <th>{{ summary.total }}</th>
-        <th>{{ summary.needsTranslation }}</th>
-        <th>{{ summary.notApproved }}</th>
+            <tr>
+                <th>Summe</th>
+                <th>{{ summary.total }}</th>
+                <th>{{ summary.needsTranslation }}</th>
+                <th>{{ summary.notApproved }}</th>
+            </tr>
         </tfoot>
     </table>
+    {{ dump_form(dumpForm) }}
 {% endblock %}
