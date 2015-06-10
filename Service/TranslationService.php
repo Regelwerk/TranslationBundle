@@ -61,9 +61,10 @@ class TranslationService {
     /**
      *
      * @param string $domain
+     * @param bool $sort
      * @return array
      */
-    public function getDomains($domain = '*') {
+    public function getDomains($domain = '*', $sort = true) {
         if ($domain != '*') {
             return [$domain];
         }
@@ -72,6 +73,9 @@ class TranslationService {
         $domains = [];
         foreach ($finder as $file) {
             $domains[] = substr($file->getBasename(), 0, -7);
+        }
+        if ($sort) {
+            natcasesort($domains);
         }
         return $domains;
     }
